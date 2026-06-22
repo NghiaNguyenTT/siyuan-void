@@ -248,7 +248,7 @@
     --b3-theme-primary-lighter: oklch(0.6204 0.195 253.83 / 0.48);
     --b3-theme-primary-lightest: oklch(0.6204 0.195 253.83 / 0.2);
     --b3-theme-secondary: oklch(70.5% 0.015 286.067);      /* muted */
-    --b3-theme-background: oklch(12% 0.005 285.823);        /* dark bg */
+    --b3-theme-background: oklch(15% 0.005 285.823);        /* panel bg */
     --b3-theme-background-light: oklch(100% 0 0 / 0.06);
     --b3-theme-surface: oklch(0.2103 0.0059 285.89);       /* eclipse surface */
     --b3-theme-surface-light: oklch(0.2103 0.0059 285.89 / 0.86);
@@ -268,8 +268,8 @@
     --b3-border-color: transparent;
 
     /* ── Body ── */
-    --b3-body-background: oklch(16% 0.004 286);          /* canvas base */
-    --b3-body-background-hl-opacity: 0.15;               /* subtle glow */
+    --b3-body-background: oklch(18% 0.004 286);          /* canvas base */
+    --b3-body-background-hl-opacity: 0.24;               /* match midnight */
     --b3-body-background-hl: 254, 80%, 60%;              /* HeroUI blue HSL */
 
     /* ── Scrollbar ── */
@@ -553,6 +553,24 @@ select {
 .block__popover {
     box-shadow: 0 0 0 0.5px oklch(100% 0 0 / 0.08), 0 6px 16px oklch(0% 0 0 / 0.5) !important;
 }
+
+
+/* ================================================================
+   ACCENT UNIFICATION — active tab + wiki links use primary blue
+   ================================================================ */
+
+/* Active/focused tab — subtle blue underline indicator */
+.layout-tab-bar .item--focus::after {
+    background-color: var(--b3-theme-primary) !important;
+}
+
+/* Active tab title text */
+.layout-tab-bar .item--focus .item__text {
+    color: var(--b3-theme-primary);
+}
+
+/* Wiki / internal links — already primary blue via --b3-protyle-inline-link-color */
+/* Confirmed: links use the same HeroUI blue as the gradient */
 
 
 /* ================================================================
