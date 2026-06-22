@@ -559,14 +559,14 @@ select {
    ACCENT UNIFICATION — active tab + wiki links use primary blue
    ================================================================ */
 
-/* Active/focused tab — subtle blue underline indicator */
+/* Active/focused tab — lighter blue-purple underline */
 .layout-tab-bar .item--focus::after {
-    background-color: var(--b3-theme-primary) !important;
+    background-color: hsl(254, 75%, 58%) !important;
 }
 
 /* Active tab title text */
 .layout-tab-bar .item--focus .item__text {
-    color: var(--b3-theme-primary);
+    color: hsl(254, 75%, 58%);
 }
 
 /* Wiki / internal links — already primary blue via --b3-protyle-inline-link-color */
