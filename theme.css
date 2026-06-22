@@ -444,14 +444,22 @@ select {
     border-left: none !important;
 }
 
-/* Remove table borders */
-.b3-typography table,
-.protyle-wysiwyg table,
-.b3-typography th,
-.b3-typography td,
-.protyle-wysiwyg th,
-.protyle-wysiwyg td {
-    border: none !important;
+/* Table — subtle visible borders for readability */
+[data-theme-mode="dark"] .b3-typography table,
+[data-theme-mode="dark"] .protyle-wysiwyg table {
+    border-collapse: collapse;
+}
+[data-theme-mode="dark"] .b3-typography th,
+[data-theme-mode="dark"] .b3-typography td,
+[data-theme-mode="dark"] .protyle-wysiwyg th,
+[data-theme-mode="dark"] .protyle-wysiwyg td {
+    border: 1px solid oklch(100% 0 0 / 0.1) !important;
+    padding: 0.5em 0.75em;
+}
+[data-theme-mode="dark"] .b3-typography thead th,
+[data-theme-mode="dark"] .protyle-wysiwyg thead th {
+    background: oklch(100% 0 0 / 0.04);
+    font-weight: 600;
 }
 
 /* Remove code block border */
