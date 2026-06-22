@@ -488,14 +488,64 @@ select {
     background: var(--b3-theme-surface-lighter);
 }
 
-/* Remove callout border */
+/* Callout backgrounds — subtle tint per type */
 .b3-typography .callout,
 .protyle-wysiwyg .callout {
     border: none !important;
+    border-radius: var(--b3-border-radius);
+    padding: 0.6em 0.8em;
+}
+/* Colored left bar instead of removed ::before */
+.b3-typography .callout::before,
+.protyle-wysiwyg .callout::before {
+    display: block !important;
+    width: 3px !important;
+    border-radius: 3px;
+}
+/* Note — subtle blue-purple tint */
+.b3-typography .callout,
+.protyle-wysiwyg .callout {
+    background: hsl(254 40% 50% / 0.08);
 }
 .b3-typography .callout::before,
 .protyle-wysiwyg .callout::before {
-    display: none !important;
+    background: hsl(254 75% 58%);
+}
+/* Tip — green tint */
+.b3-typography .callout[data-subtype="tip"],
+.protyle-wysiwyg .callout[data-subtype="tip"] {
+    background: hsl(142 70% 40% / 0.08);
+}
+.b3-typography .callout[data-subtype="tip"]::before,
+.protyle-wysiwyg .callout[data-subtype="tip"]::before {
+    background: hsl(142 70% 50%);
+}
+/* Warning — amber tint */
+.b3-typography .callout[data-subtype="warning"],
+.protyle-wysiwyg .callout[data-subtype="warning"] {
+    background: hsl(45 90% 50% / 0.08);
+}
+.b3-typography .callout[data-subtype="warning"]::before,
+.protyle-wysiwyg .callout[data-subtype="warning"]::before {
+    background: hsl(45 90% 55%);
+}
+/* Important — deeper blue-purple tint */
+.b3-typography .callout[data-subtype="important"],
+.protyle-wysiwyg .callout[data-subtype="important"] {
+    background: hsl(254 50% 45% / 0.1);
+}
+.b3-typography .callout[data-subtype="important"]::before,
+.protyle-wysiwyg .callout[data-subtype="important"]::before {
+    background: hsl(254 80% 65%);
+}
+/* Caution — red tint */
+.b3-typography .callout[data-subtype="caution"],
+.protyle-wysiwyg .callout[data-subtype="caution"] {
+    background: hsl(0 70% 50% / 0.08);
+}
+.b3-typography .callout[data-subtype="caution"]::before,
+.protyle-wysiwyg .callout[data-subtype="caution"]::before {
+    background: hsl(0 70% 55%);
 }
 
 /* Remove chip/badge borders */
@@ -577,12 +627,9 @@ select {
     color: hsl(254, 75%, 58%);
 }
 
-/* Wiki / block ref links — nudge baseline down (SiYuan quirk) */
+/* Wiki / block ref links — color only (baseline controlled by SiYuan editor) */
 .protyle-wysiwyg span[data-type="block-ref"] {
-    font-size: inherit;
-    vertical-align: baseline;
-    transform: translateY(1.5px);
-    display: inline-block;
+    color: hsl(254, 75%, 58%);
 }
 
 
