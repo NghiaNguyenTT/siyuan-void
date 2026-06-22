@@ -166,7 +166,7 @@
     --b3-protyle-inline-mark-background: #fef08a;
     --b3-protyle-inline-mark-color: oklch(0.2103 0.0059 285.89);
     --b3-protyle-inline-tag-color: oklch(55.17% 0.0138 285.94);
-    --b3-protyle-inline-blockref-color: oklch(0.6204 0.195 253.83);
+    --b3-protyle-inline-blockref-color: hsl(254, 75%, 58%);  /* wiki links */
     --b3-protyle-inline-fileref-color: var(--b3-theme-secondary);
 
     /* ── Callouts ── */
@@ -334,7 +334,7 @@
     --b3-protyle-inline-mark-background: #854d0e;
     --b3-protyle-inline-mark-color: oklch(99.11% 0 0);
     --b3-protyle-inline-tag-color: oklch(70.5% 0.015 286.067);
-    --b3-protyle-inline-blockref-color: oklch(0.6204 0.195 253.83);
+    --b3-protyle-inline-blockref-color: hsl(254, 75%, 58%);  /* wiki links */
     --b3-protyle-inline-fileref-color: var(--b3-theme-secondary);
 
     /* ── PDF ── */
