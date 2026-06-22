@@ -1,0 +1,20 @@
+{
+  "name": "siyuan-void",
+  "author": "NghiaNguyenTT",
+  "url": "https://github.com/NghiaNguyenTT/siyuan-void",
+  "version": "0.1.0",
+  "minAppVersion": "3.7.0",
+  "displayName": {
+    "default": "Void",
+    "zh-CN": "虚空"
+  },
+  "description": {
+    "default": "A minimal borderless dark theme with floating island panels. DM Sans font, clean surfaces, no distractions.",
+    "zh-CN": "极简无边框暗色主题，悬浮岛屿式面板设计。DM Sans 字体，干净清爽。"
+  },
+  "readme": {
+    "default": "README.md"
+  },
+  "modes": ["light", "dark"],
+  "keywords": ["dark", "minimal", "borderless", "clean", "island", "void"]
+}

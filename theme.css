@@ -1,0 +1,590 @@
+/* ================================================================
+   HeroUI SiYuan — minimal borderless theme
+   Uses HeroUI v3 default dark palette. No borders, clean surfaces.
+   ================================================================ */
+
+/* ================================================================
+   DM Sans Font — self-hosted woff2
+   ================================================================ */
+@font-face {
+    font-family: 'DM Sans';
+    font-style: normal;
+    font-weight: 400;
+    font-display: swap;
+    src: url('font/dm-sans-400.woff2') format('woff2');
+}
+@font-face {
+    font-family: 'DM Sans';
+    font-style: normal;
+    font-weight: 500;
+    font-display: swap;
+    src: url('font/dm-sans-500.woff2') format('woff2');
+}
+@font-face {
+    font-family: 'DM Sans';
+    font-style: normal;
+    font-weight: 700;
+    font-display: swap;
+    src: url('font/dm-sans-700.woff2') format('woff2');
+}
+
+/* ================================================================
+   LIGHT MODE
+   ================================================================ */
+:root {
+    /* ── Core palette (HeroUI light) ── */
+    --b3-theme-primary: oklch(0.6204 0.195 253.83);        /* accent blue */
+    --b3-theme-primary-light: oklch(0.6204 0.195 253.83 / 0.72);
+    --b3-theme-primary-lighter: oklch(0.6204 0.195 253.83 / 0.48);
+    --b3-theme-primary-lightest: oklch(0.6204 0.195 253.83 / 0.16);
+    --b3-theme-secondary: oklch(70.5% 0.015 286.067);      /* muted */
+    --b3-theme-background: oklch(0.9702 0 0);               /* near-white */
+    --b3-theme-background-light: oklch(0.9373 0.0013 286.37);
+    --b3-theme-surface: oklch(100% 0 0);                    /* white */
+    --b3-theme-surface-light: oklch(100% 0 0 / 0.86);
+    --b3-theme-surface-lighter: oklch(0.9373 0.0013 286.37);
+    --b3-theme-error: oklch(0.6532 0.2328 25.74);           /* danger */
+    --b3-theme-success: oklch(0.7329 0.1935 150.81);        /* success */
+
+    /* ── Text ── */
+    --b3-theme-on-primary: oklch(99.11% 0 0);               /* snow */
+    --b3-theme-on-secondary: oklch(99.11% 0 0);
+    --b3-theme-on-background: oklch(0.2103 0.0059 285.89);  /* eclipse */
+    --b3-theme-on-surface: oklch(55.17% 0.0138 285.94);     /* muted */
+    --b3-theme-on-surface-light: oklch(55.17% 0.0138 285.94 / 0.68);
+    --b3-theme-on-error: oklch(99.11% 0 0);
+
+    /* ── Borders — REMOVED (borderless) ── */
+    --b3-border-color: transparent;
+    --b3-border-radius: 8px;
+    --b3-border-radius-s: 4px;
+    --b3-border-radius-b: 12px;
+
+    /* ── Body ── */
+    --b3-body-background: oklch(0.9702 0 0);
+    --b3-body-background-hl-opacity: 0;
+    --b3-body-background-hl: 0, 0%, 0%;
+
+    /* ── Scrollbar ── */
+    --b3-scroll-color: oklch(0% 0 0 / 0.12);
+
+    /* ── List / Menu ── */
+    --b3-list-hover: oklch(0% 0 0 / 0.05);
+    --b3-list-icon-hover: oklch(0% 0 0 / 0.08);
+    --b3-menu-background: var(--b3-theme-surface);
+
+    /* ── Tooltips ── */
+    --b3-tooltips-background: oklch(0.2103 0.0059 285.89);
+    --b3-tooltips-color: oklch(99.11% 0 0);
+    --b3-tooltips-second-color: oklch(70.5% 0.015 286.067);
+    --b3-tooltips-shadow: 0 2px 8px 0 rgba(0,0,0,0.06), 0 14px 28px 0 rgba(0,0,0,0.08);
+
+    /* ── Empty / Mask ── */
+    --b3-empty-color: var(--b3-theme-on-surface-light);
+    --b3-mask-background: rgba(0,0,0,0.5);
+
+    /* ── Cards ── */
+    --b3-card-error-color: oklch(0.6532 0.2328 25.74);
+    --b3-card-error-background: oklch(0.6532 0.2328 25.74 / 0.12);
+    --b3-card-warning-color: oklch(0.7819 0.1585 72.33);
+    --b3-card-warning-background: oklch(0.7819 0.1585 72.33 / 0.12);
+    --b3-card-info-color: oklch(0.6204 0.195 253.83);
+    --b3-card-info-background: oklch(0.6204 0.195 253.83 / 0.12);
+    --b3-card-success-color: oklch(0.7329 0.1935 150.81);
+    --b3-card-success-background: oklch(0.7329 0.1935 150.81 / 0.12);
+
+    /* ── Font colors ── */
+    --b3-font-color1: var(--b3-card-error-color);
+    --b3-font-color2: var(--b3-card-warning-color);
+    --b3-font-color3: var(--b3-card-info-color);
+    --b3-font-color4: var(--b3-card-success-color);
+    --b3-font-color5: var(--b3-theme-on-surface);
+    --b3-font-color6: var(--b3-theme-primary);
+    --b3-font-color7: var(--b3-theme-secondary);
+    --b3-font-color8: var(--b3-theme-error);
+    --b3-font-color9: #e11d48;
+    --b3-font-color10: #0891b2;
+    --b3-font-color11: #059669;
+    --b3-font-color12: #ca8a04;
+    --b3-font-color13: var(--b3-theme-background);
+    --b3-font-background1: var(--b3-card-error-background);
+    --b3-font-background2: var(--b3-card-warning-background);
+    --b3-font-background3: var(--b3-card-info-background);
+    --b3-font-background4: var(--b3-card-success-background);
+    --b3-font-background5: oklch(0.9373 0.0013 286.37 / 0.5);
+    --b3-font-background6: oklch(0.9373 0.0013 286.37 / 0.5);
+    --b3-font-background7: #fef3c7;
+    --b3-font-background8: #f3e8ff;
+    --b3-font-background9: #e0f2fe;
+    --b3-font-background10: #dcfce7;
+    --b3-font-background11: #fef9c3;
+    --b3-font-background12: #ffedd5;
+    --b3-font-background13: var(--b3-theme-on-background);
+
+    /* ── Toolbar ── */
+    --b3-toolbar-color: var(--b3-theme-on-surface);
+    --b3-toolbar-hover: var(--b3-theme-background-light);
+    --b3-toolbar-left-mac: 74px;
+
+    /* ── Transitions ── */
+    --b3-transition: all 0.2s cubic-bezier(0, 0, 0.2, 1) 0ms;
+    --b3-width-transition: width 0.2s cubic-bezier(0, 0, 0.2, 1) 0ms;
+    --b3-color-transition: color 0.2s cubic-bezier(0, 0, 0.2, 1) 0ms;
+    --b3-background-transition: background 20ms ease-in 0s;
+
+    /* ── Highlights ── */
+    --b3-highlight-color: oklch(0.2103 0.0059 285.89);
+    --b3-highlight-background: #fef08a;
+    --b3-highlight-current-background: #fbbf24;
+
+    /* ── Select / Switch ── */
+    --b3-select-background: url("data:image/svg+xml;utf8,<svg fill='oklch(55.17% 0.0138 285.94 / 0.68)' height='24' viewBox='0 0 24 24' width='24' xmlns='http://www.w3.org/2000/svg'><path d='M7 10l5 5 5-5z'/><path d='M0 0h24v24H0z' fill='none'/></svg>") no-repeat right 2px center var(--b3-menu-background);
+    --b3-switch-background: oklch(0.9373 0.0013 286.37);
+    --b3-switch-border: var(--b3-theme-on-surface-light);
+    --b3-switch-hover: oklch(0.2103 0.0059 285.89 / 0.06);
+    --b3-switch-checked: #fff;
+    --b3-switch-checked-background: var(--b3-theme-primary);
+    --b3-switch-checked-hover: oklch(0.6204 0.195 253.83 / 0.8);
+    --b3-switch-checked-hover2: oklch(0.2103 0.0059 285.89 / 0.06);
+
+    /* ── Shadows ── */
+    --b3-dock-shadow-color: transparent;
+    --b3-point-shadow: 0 2px 4px 0 rgba(0,0,0,0.04), 0 1px 2px 0 rgba(0,0,0,0.06);
+    --b3-dialog-shadow: 0 2px 8px 0 rgba(0,0,0,0.06), 0 14px 28px 0 rgba(0,0,0,0.08);
+    --b3-button-shadow: none;
+    --b3-button-active-shadow: none;
+
+    /* ── Inline code ── */
+    --b3-protyle-code-background: oklch(0.2103 0.0059 285.89 / 0.06);
+
+    /* ── Protyle inline ── */
+    --b3-protyle-inline-strong-color: inherit;
+    --b3-protyle-inline-em-color: inherit;
+    --b3-protyle-inline-u-color: inherit;
+    --b3-protyle-inline-s-color: inherit;
+    --b3-protyle-inline-link-color: oklch(0.6204 0.195 253.83);
+    --b3-protyle-inline-mark-background: #fef08a;
+    --b3-protyle-inline-mark-color: oklch(0.2103 0.0059 285.89);
+    --b3-protyle-inline-tag-color: oklch(55.17% 0.0138 285.94);
+    --b3-protyle-inline-blockref-color: oklch(0.6204 0.195 253.83);
+    --b3-protyle-inline-fileref-color: var(--b3-theme-secondary);
+
+    /* ── Callouts ── */
+    --b3-callout-note: var(--b3-theme-primary);
+    --b3-callout-tip: var(--b3-theme-success);
+    --b3-callout-caution: var(--b3-theme-error);
+    --b3-callout-important: var(--b3-protyle-inline-blockref-color);
+    --b3-callout-warning: #eab308;
+
+    /* ── PDF ── */
+    --b3-pdf-selection: #bbf7d0;
+    --sidebar-width: 200px;
+    --b3-pdf-offset: 0;
+    --b3-pdf-background1: var(--b3-theme-error);
+    --b3-pdf-background2: #f5822e;
+    --b3-pdf-background3: #faca5a;
+    --b3-pdf-background4: #7cc868;
+    --b3-pdf-background5: #fc5c88;
+    --b3-pdf-background6: #69b0f2;
+    --b3-pdf-background7: #c885da;
+    --b3-pdf-dark: oklch(0.2103 0.0059 285.89);
+
+    /* ── Table ── */
+    --b3-table-even-background: oklch(0% 0 0 / 0.02);
+
+    /* ── Database ── */
+    --b3-av-gallery-shadow: none;
+
+    /* ── Embed / Blockquote ── */
+    --b3-embed-background: transparent;
+    --b3-bq-background: transparent;
+
+    /* ── Parent block ── */
+    --b3-parent-background: var(--b3-theme-background);
+
+    /* ── Graph ── */
+    --b3-graph-p-point: #0891b2;
+    --b3-graph-heading-point: #7c3aed;
+    --b3-graph-math-point: #22c55e;
+    --b3-graph-code-point: #0ea5e9;
+    --b3-graph-table-point: #3b82f6;
+    --b3-graph-list-point: #ec4899;
+    --b3-graph-todo-point: #eab308;
+    --b3-graph-olist-point: #f97316;
+    --b3-graph-listitem-point: #f43f5e;
+    --b3-graph-bq-point: #8b5cf6;
+    --b3-graph-callout-point: var(--b3-theme-success);
+    --b3-graph-super-point: #d946ef;
+    --b3-graph-doc-point: oklch(0.2103 0.0059 285.89);
+    --b3-graph-tag-point: #84cc16;
+    --b3-graph-asset-point: #10b981;
+    --b3-graph-line: oklch(55.17% 0.0138 285.94);
+    --b3-graph-ref-line: var(--b3-theme-error);
+    --b3-graph-tag-line: #4d7c0f;
+    --b3-graph-tag-tag-line: #bef264;
+    --b3-graph-asset-line: #047857;
+    --b3-graph-hl-point: #eab308;
+    --b3-graph-hl-line: #3b82f6;
+
+    /* ── Typography (DM Sans + system fallbacks) ── */
+    --b3-font-family: "DM Sans", "Inter", ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "PingFang SC", "Microsoft YaHei", sans-serif;
+    --b3-font-family-protyle: var(--b3-font-family);
+    --b3-font-family-code: "JetBrains Mono", "Fira Code", mononoki, Consolas, "Liberation Mono", Menlo, Courier, monospace;
+    --b3-font-family-graph: arial;
+    --b3-font-family-emoji: "Segoe UI Emoji", "Apple Color Emoji", "Noto Color Emoji", emojis;
+    --b3-font-family-math: KaTeX_Math;
+    --b3-font-family-kbd: var(--b3-font-family-protyle);
+    --b3-font-size: 15px;
+}
+
+
+/* ================================================================
+   DARK MODE — HeroUI v3 default dark palette
+   ================================================================ */
+[data-theme-mode="dark"] {
+    /* ── Core palette ── */
+    --b3-theme-primary: oklch(0.6204 0.195 253.83);        /* accent blue */
+    --b3-theme-primary-light: oklch(0.6204 0.195 253.83 / 0.72);
+    --b3-theme-primary-lighter: oklch(0.6204 0.195 253.83 / 0.48);
+    --b3-theme-primary-lightest: oklch(0.6204 0.195 253.83 / 0.2);
+    --b3-theme-secondary: oklch(70.5% 0.015 286.067);      /* muted */
+    --b3-theme-background: oklch(12% 0.005 285.823);        /* dark bg */
+    --b3-theme-background-light: oklch(100% 0 0 / 0.06);
+    --b3-theme-surface: oklch(0.2103 0.0059 285.89);       /* eclipse surface */
+    --b3-theme-surface-light: oklch(0.2103 0.0059 285.89 / 0.86);
+    --b3-theme-surface-lighter: oklch(100% 0 0 / 0.16);    /* visible fold dot */
+    --b3-theme-error: oklch(0.594 0.1967 24.63);            /* danger */
+    --b3-theme-success: oklch(0.7329 0.1935 150.81);        /* success */
+
+    /* ── Text ── */
+    --b3-theme-on-primary: oklch(99.11% 0 0);               /* snow */
+    --b3-theme-on-secondary: oklch(99.11% 0 0);
+    --b3-theme-on-background: oklch(99.11% 0 0);            /* snow */
+    --b3-theme-on-surface: oklch(70.5% 0.015 286.067);      /* muted */
+    --b3-theme-on-surface-light: oklch(70.5% 0.015 286.067);/* full opacity for gutter */
+    --b3-theme-on-error: oklch(99.11% 0 0);
+
+    /* ── Borders — REMOVED ── */
+    --b3-border-color: transparent;
+
+    /* ── Body ── */
+    --b3-body-background: oklch(12% 0.005 285.823);
+    --b3-body-background-hl-opacity: 0;
+    --b3-body-background-hl: 0, 0%, 0%;
+
+    /* ── Scrollbar ── */
+    --b3-scroll-color: oklch(100% 0 0 / 0.15);
+
+    /* ── List / Menu ── */
+    --b3-list-hover: oklch(100% 0 0 / 0.08);
+    --b3-list-icon-hover: oklch(100% 0 0 / 0.12);
+    --b3-menu-background: var(--b3-theme-surface);
+
+    /* ── Tooltips / Snackbar ── */
+    --b3-tooltips-background: oklch(0.2103 0.0059 285.89);  /* dark, not white */
+    --b3-tooltips-color: oklch(99.11% 0 0);
+    --b3-tooltips-second-color: oklch(70.5% 0.015 286.067);
+    --b3-tooltips-shadow: 0 0 1px 0 rgba(255,255,255,0.3) inset, 0 14px 28px 0 rgba(0,0,0,0.4);
+
+    /* ── Empty / Mask ── */
+    --b3-empty-color: var(--b3-theme-on-surface);
+    --b3-mask-background: rgba(0,0,0,0.6);
+
+    /* ── Cards ── */
+    --b3-card-error-color: oklch(0.594 0.1967 24.63);
+    --b3-card-error-background: oklch(0.594 0.1967 24.63 / 0.15);
+    --b3-card-warning-color: oklch(0.8203 0.1388 76.34);
+    --b3-card-warning-background: oklch(0.8203 0.1388 76.34 / 0.15);
+    --b3-card-info-color: oklch(0.6204 0.195 253.83);
+    --b3-card-info-background: oklch(0.6204 0.195 253.83 / 0.15);
+    --b3-card-success-color: oklch(0.7329 0.1935 150.81);
+    --b3-card-success-background: oklch(0.7329 0.1935 150.81 / 0.15);
+
+    /* ── Toolbar ── */
+    --b3-toolbar-color: var(--b3-theme-on-surface);
+    --b3-toolbar-hover: oklch(100% 0 0 / 0.08);
+
+    /* ── Select / Switch ── */
+    --b3-select-background: url("data:image/svg+xml;utf8,<svg fill='oklch(70.5% 0.015 286.067 / 0.68)' height='24' viewBox='0 0 24 24' width='24' xmlns='http://www.w3.org/2000/svg'><path d='M7 10l5 5 5-5z'/><path d='M0 0h24v24H0z' fill='none'/></svg>") no-repeat right 2px center var(--b3-menu-background);
+    --b3-switch-background: oklch(28% 0.006 286.033);
+    --b3-switch-border: var(--b3-theme-on-surface-light);
+    --b3-switch-hover: oklch(100% 0 0 / 0.1);
+    --b3-switch-checked: var(--b3-theme-primary);
+    --b3-switch-checked-background: oklch(28% 0.006 286.033);
+    --b3-switch-checked-hover: var(--b3-theme-primary);
+    --b3-switch-checked-hover2: oklch(100% 0 0 / 0.1);
+
+    /* ── Shadows ── */
+    --b3-dock-shadow-color: transparent;
+    --b3-point-shadow: none;
+    --b3-dialog-shadow: 0 0 1px 0 rgba(255,255,255,0.3) inset, 0 14px 28px 0 rgba(0,0,0,0.5);
+    --b3-button-shadow: none;
+    --b3-button-active-shadow: none;
+
+    /* ── Highlights ── */
+    --b3-highlight-color: oklch(99.11% 0 0);
+    --b3-highlight-background: #854d0e;
+    --b3-highlight-current-background: #a16207;
+
+    /* ── Code ── */
+    --b3-protyle-code-background: oklch(100% 0 0 / 0.08);
+
+    /* ── Protyle inline ── */
+    --b3-protyle-inline-link-color: oklch(0.6204 0.195 253.83);
+    --b3-protyle-inline-mark-background: #854d0e;
+    --b3-protyle-inline-mark-color: oklch(99.11% 0 0);
+    --b3-protyle-inline-tag-color: oklch(70.5% 0.015 286.067);
+    --b3-protyle-inline-blockref-color: oklch(0.6204 0.195 253.83);
+    --b3-protyle-inline-fileref-color: var(--b3-theme-secondary);
+
+    /* ── PDF ── */
+    --b3-pdf-dark: oklch(12% 0.005 285.823);
+
+    /* ── Table ── */
+    --b3-table-even-background: oklch(100% 0 0 / 0.03);
+
+    /* ── Graph ── */
+    --b3-graph-doc-point: oklch(99.11% 0 0);
+    --b3-graph-line: oklch(55.17% 0.0138 285.94);
+}
+
+
+/* ================================================================
+   CJK font overrides
+   ================================================================ */
+:root:lang(zh-CN) {
+    --b3-font-family: "Inter", "PingFang SC", "Microsoft YaHei", "Helvetica Neue", Helvetica, arial, sans-serif;
+}
+:root:lang(zh-TW) {
+    --b3-font-family: "Inter", "PingFang TC", "Microsoft JhengHei", "Helvetica Neue", Helvetica, arial, sans-serif;
+}
+:root:lang(ja) {
+    --b3-font-family: "Inter", "Hiragino Sans", "Yu Gothic UI", "Helvetica Neue", Helvetica, arial, sans-serif;
+}
+
+
+/* ================================================================
+   Calendar picker invert for dark
+   ================================================================ */
+[data-theme-mode="dark"] .b3-text-field::-webkit-calendar-picker-indicator {
+    filter: invert(1);
+}
+
+
+/* ================================================================
+   GUTTER FIX — fold/expand visibility
+   ================================================================ */
+.protyle-gutters svg {
+    color: var(--b3-theme-on-surface) !important;
+}
+.protyle-gutters button:hover svg {
+    color: var(--b3-theme-on-background) !important;
+}
+.protyle-wysiwyg div[fold="1"][data-type="NodeHeading"]::before,
+.protyle-wysiwyg [data-node-id].li > div[fold="1"][data-type="NodeHeading"]::before {
+    background-color: var(--b3-theme-primary-lightest) !important;
+}
+.protyle-wysiwyg [data-node-id].li[fold="1"] > .protyle-action::after {
+    background-color: var(--b3-list-icon-hover) !important;
+}
+.protyle-wysiwyg [data-node-id][fold="1"]:not(.li):not([data-type="NodeHeading"]) {
+    opacity: 0.55;
+}
+
+
+/* ================================================================
+   BORDERLESS — remove all borders, rings, outlines
+   ================================================================ */
+
+/* Remove panel/dock borders */
+.layout__dockl,
+.layout__dockr,
+.layout__center {
+    border: none !important;
+}
+
+/* Remove tab bar border */
+.layout-tab-bar {
+    border-bottom: none !important;
+}
+
+/* Remove input/field borders */
+.b3-text-field,
+.b3-select,
+input,
+textarea,
+select {
+    border-color: transparent !important;
+    box-shadow: none !important;
+    outline: none !important;
+}
+
+/* Remove focus rings */
+*:focus-visible {
+    outline: none !important;
+    box-shadow: none !important;
+}
+
+/* Remove dialog/panel borders */
+.b3-dialog__container,
+.b3-dialog__header,
+.b3-dialog__action {
+    border: none !important;
+}
+
+/* Remove menu borders */
+.b3-menu,
+.b3-menu__items {
+    border: none !important;
+}
+
+/* Remove blockquote border */
+.protyle-wysiwyg [data-node-id].bq,
+.b3-typography blockquote {
+    border-left: none !important;
+}
+
+/* Remove table borders */
+.b3-typography table,
+.protyle-wysiwyg table,
+.b3-typography th,
+.b3-typography td,
+.protyle-wysiwyg th,
+.protyle-wysiwyg td {
+    border: none !important;
+}
+
+/* Remove code block border */
+.b3-typography .code-block,
+.protyle-wysiwyg .code-block {
+    border: none !important;
+}
+
+/* Remove inline code border */
+.b3-typography code:not(.hljs),
+.protyle-wysiwyg code:not(.hljs) {
+    border: none !important;
+}
+
+/* Remove heading bottom border */
+.protyle-wysiwyg [data-node-id].h1,
+.b3-typography h1 {
+    border-bottom: none !important;
+}
+
+/* Remove horizontal rule border — replace with subtle background */
+.b3-typography hr,
+.protyle-wysiwyg hr {
+    border: none !important;
+    height: 1px;
+    background: var(--b3-theme-surface-lighter);
+}
+
+/* Remove callout border */
+.b3-typography .callout,
+.protyle-wysiwyg .callout {
+    border: none !important;
+}
+.b3-typography .callout::before,
+.protyle-wysiwyg .callout::before {
+    display: none !important;
+}
+
+/* Remove chip/badge borders */
+.b3-chip {
+    border: none !important;
+}
+
+/* Remove card borders */
+.b3-card {
+    border: none !important;
+}
+
+/* Remove switch border */
+.b3-switch {
+    border: none !important;
+}
+
+/* Remove gallery border */
+.b3-av-gallery-shadow {
+    box-shadow: none !important;
+}
+
+/* Remove scrollbar border */
+::-webkit-scrollbar-thumb {
+    border: none !important;
+}
+
+
+/* ================================================================
+   JETBRAINS ISLAND DESIGN
+   ================================================================ */
+
+/* Canvas — slightly lighter so dark panel shadows are visible */
+[data-theme-mode="dark"] body {
+    background: oklch(16% 0.004 286) !important;
+    background-image: none !important;
+}
+
+/* Docks — dark floating panels on lighter canvas */
+.layout__dockl,
+.layout__dockr {
+    overflow: visible !important;
+    border-radius: var(--b3-border-radius-b);
+    box-shadow: 0 0 0 0.5px oklch(100% 0 0 / 0.06), 0 2px 8px oklch(0% 0 0 / 0.5) !important;
+}
+
+/* Editor center — dark floating panel */
+.layout__center {
+    border-radius: var(--b3-border-radius-b);
+    box-shadow: 0 0 0 0.5px oklch(100% 0 0 / 0.06), 0 2px 8px oklch(0% 0 0 / 0.5) !important;
+}
+
+/* Toolbar */
+.toolbar {
+    overflow: visible !important;
+    box-shadow: 0 0 0 0.5px oklch(100% 0 0 / 0.06), 0 2px 8px oklch(0% 0 0 / 0.4) !important;
+}
+
+/* Status bar */
+#status {
+    box-shadow: 0 0 0 0.5px oklch(100% 0 0 / 0.06), 0 -2px 6px oklch(0% 0 0 / 0.4) !important;
+}
+
+/* Dialogs & menus */
+.b3-dialog__container {
+    box-shadow: 0 0 0 0.5px oklch(100% 0 0 / 0.1), 0 12px 32px oklch(0% 0 0 / 0.5) !important;
+}
+.b3-menu,
+.block__popover {
+    box-shadow: 0 0 0 0.5px oklch(100% 0 0 / 0.08), 0 6px 16px oklch(0% 0 0 / 0.5) !important;
+}
+
+
+/* ================================================================
+   CONTRAST FIXES — elements with low readability
+   ================================================================ */
+
+/* Progress bar: override hardcoded white bg in dark mode */
+[data-theme-mode="dark"] .fn__progress {
+    background-color: var(--b3-theme-surface) !important;
+}
+
+/* Callout text: boost contrast on dark backgrounds */
+.b3-typography .callout,
+.protyle-wysiwyg .callout {
+    color: var(--b3-theme-on-background) !important;
+}
+
+/* Status cards: improve text contrast */
+.b3-card--error,
+.b3-card--warning,
+.b3-card--info,
+.b3-card--success {
+    color: var(--b3-theme-on-background) !important;
+}
+
+/* Status card headings */
+.b3-card__title {
+    color: var(--b3-theme-on-background) !important;
+}
