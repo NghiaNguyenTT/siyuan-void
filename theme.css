@@ -580,7 +580,7 @@ select {
 /* Wiki / block ref links — ensure normal font size */
 .protyle-wysiwyg [data-node-id] span[data-type~="block-ref"],
 .protyle-wysiwyg [data-node-id] span[data-type~="file-annotation-ref"] {
-    font-size: inherit !important;
+    font-size: var(--b3-font-size) !important;
 }
 
 
