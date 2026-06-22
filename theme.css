@@ -577,17 +577,26 @@ select {
     color: hsl(254, 75%, 58%);
 }
 
-/* Wiki / block ref links — complete reset to match surrounding text */
+/* Wiki / block ref links — force baseline at all levels */
+.protyle-wysiwyg [data-node-id] [data-type~="block-ref"],
+.protyle-wysiwyg [data-node-id] [data-type~="file-annotation-ref"],
 .protyle-wysiwyg [data-node-id] span[data-type~="block-ref"],
 .protyle-wysiwyg [data-node-id] span[data-type~="file-annotation-ref"] {
     all: unset;
     color: hsl(254, 75%, 58%) !important;
     font: inherit !important;
     cursor: pointer;
+    display: inline !important;
+    vertical-align: baseline !important;
+    position: static !important;
 }
-.protyle-wysiwyg [data-node-id] span[data-type~="block-ref"]:hover,
-.protyle-wysiwyg [data-node-id] span[data-type~="file-annotation-ref"]:hover {
-    opacity: 0.86;
+/* Also target any sup wrapper around block refs */
+.protyle-wysiwyg sup [data-type~="block-ref"],
+.protyle-wysiwyg sup [data-type~="file-annotation-ref"] {
+    font-size: inherit !important;
+    vertical-align: baseline !important;
+    position: static !important;
+    top: auto !important;
 }
 
 
