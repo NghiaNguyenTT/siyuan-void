@@ -577,19 +577,17 @@ select {
     color: hsl(254, 75%, 58%);
 }
 
-/* Wiki / block ref links — force inline, match surrounding text */
+/* Wiki / block ref links — complete reset to match surrounding text */
 .protyle-wysiwyg [data-node-id] span[data-type~="block-ref"],
 .protyle-wysiwyg [data-node-id] span[data-type~="file-annotation-ref"] {
-    font-size: var(--b3-font-size) !important;
-    vertical-align: baseline !important;
-    line-height: inherit !important;
-    display: inline !important;
-    position: static !important;
+    all: unset;
+    color: hsl(254, 75%, 58%) !important;
+    font: inherit !important;
+    cursor: pointer;
 }
-.protyle-wysiwyg [data-node-id] span[data-type~="block-ref"] *,
-.protyle-wysiwyg [data-node-id] span[data-type~="file-annotation-ref"] * {
-    vertical-align: baseline !important;
-    display: inline !important;
+.protyle-wysiwyg [data-node-id] span[data-type~="block-ref"]:hover,
+.protyle-wysiwyg [data-node-id] span[data-type~="file-annotation-ref"]:hover {
+    opacity: 0.86;
 }
 
 
