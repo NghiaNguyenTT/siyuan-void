@@ -488,64 +488,45 @@ select {
     background: var(--b3-theme-surface-lighter);
 }
 
-/* Callout backgrounds — subtle tint per type */
+/* Callout — subtle mute background, just slightly lighter than editor */
 .b3-typography .callout,
 .protyle-wysiwyg .callout {
     border: none !important;
     border-radius: var(--b3-border-radius);
     padding: 0.6em 0.8em;
+    background: oklch(0.19 0.003 286);
 }
-/* Colored left bar instead of removed ::before */
+/* Colored left accent bar per type */
 .b3-typography .callout::before,
 .protyle-wysiwyg .callout::before {
     display: block !important;
     width: 3px !important;
     border-radius: 3px;
 }
-/* Note — subtle blue-purple tint */
-.b3-typography .callout,
-.protyle-wysiwyg .callout {
-    background: hsl(254 40% 50% / 0.12);
-}
+/* Default (note) — blue-purple bar */
 .b3-typography .callout::before,
 .protyle-wysiwyg .callout::before {
-    background: hsl(254 75% 58%);
+    background: hsl(254 60% 50%);
 }
-/* Tip — green tint */
-.b3-typography .callout[data-subtype="tip"],
-.protyle-wysiwyg .callout[data-subtype="tip"] {
-    background: hsl(142 70% 40% / 0.12);
-}
+/* Tip — green bar */
 .b3-typography .callout[data-subtype="tip"]::before,
 .protyle-wysiwyg .callout[data-subtype="tip"]::before {
-    background: hsl(142 70% 50%);
+    background: hsl(142 50% 45%);
 }
-/* Warning — amber tint */
-.b3-typography .callout[data-subtype="warning"],
-.protyle-wysiwyg .callout[data-subtype="warning"] {
-    background: hsl(45 90% 50% / 0.12);
-}
+/* Warning — amber bar */
 .b3-typography .callout[data-subtype="warning"]::before,
 .protyle-wysiwyg .callout[data-subtype="warning"]::before {
-    background: hsl(45 90% 55%);
+    background: hsl(45 70% 50%);
 }
-/* Important — deeper blue-purple tint */
-.b3-typography .callout[data-subtype="important"],
-.protyle-wysiwyg .callout[data-subtype="important"] {
-    background: hsl(254 50% 45% / 0.15);
-}
+/* Important — brighter blue-purple bar */
 .b3-typography .callout[data-subtype="important"]::before,
 .protyle-wysiwyg .callout[data-subtype="important"]::before {
-    background: hsl(254 80% 65%);
+    background: hsl(254 70% 55%);
 }
-/* Caution — red tint */
-.b3-typography .callout[data-subtype="caution"],
-.protyle-wysiwyg .callout[data-subtype="caution"] {
-    background: hsl(0 70% 50% / 0.12);
-}
+/* Caution — red bar */
 .b3-typography .callout[data-subtype="caution"]::before,
 .protyle-wysiwyg .callout[data-subtype="caution"]::before {
-    background: hsl(0 70% 55%);
+    background: hsl(0 60% 50%);
 }
 
 /* Remove chip/badge borders */
