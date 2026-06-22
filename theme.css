@@ -243,10 +243,10 @@
    ================================================================ */
 [data-theme-mode="dark"] {
     /* ── Core palette ── */
-    --b3-theme-primary: oklch(0.6204 0.195 253.83);        /* accent blue */
-    --b3-theme-primary-light: oklch(0.6204 0.195 253.83 / 0.72);
-    --b3-theme-primary-lighter: oklch(0.6204 0.195 253.83 / 0.48);
-    --b3-theme-primary-lightest: oklch(0.6204 0.195 253.83 / 0.2);
+    --b3-theme-primary: hsl(254, 70%, 50%);             /* darker blue-purple from gradient */
+    --b3-theme-primary-light: hsl(254, 70%, 50% / 0.72);
+    --b3-theme-primary-lighter: hsl(254, 70%, 50% / 0.48);
+    --b3-theme-primary-lightest: hsl(254, 70%, 50% / 0.2);
     --b3-theme-secondary: oklch(70.5% 0.015 286.067);      /* muted */
     --b3-theme-background: oklch(15% 0.005 285.823);        /* panel bg */
     --b3-theme-background-light: oklch(100% 0 0 / 0.06);
