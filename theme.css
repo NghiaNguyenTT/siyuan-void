@@ -268,9 +268,9 @@
     --b3-border-color: transparent;
 
     /* ── Body ── */
-    --b3-body-background: oklch(12% 0.005 285.823);
-    --b3-body-background-hl-opacity: 0;
-    --b3-body-background-hl: 0, 0%, 0%;
+    --b3-body-background: oklch(16% 0.004 286);          /* canvas base */
+    --b3-body-background-hl-opacity: 0.15;               /* subtle glow */
+    --b3-body-background-hl: 254, 80%, 60%;              /* HeroUI blue HSL */
 
     /* ── Scrollbar ── */
     --b3-scroll-color: oklch(100% 0 0 / 0.15);
@@ -519,12 +519,6 @@ select {
 /* ================================================================
    JETBRAINS ISLAND DESIGN
    ================================================================ */
-
-/* Canvas — slightly lighter so dark panel shadows are visible */
-[data-theme-mode="dark"] body {
-    background: oklch(16% 0.004 286) !important;
-    background-image: none !important;
-}
 
 /* Docks — dark floating panels on lighter canvas */
 .layout__dockl,
