@@ -577,10 +577,12 @@ select {
     color: hsl(254, 75%, 58%);
 }
 
-/* Wiki / block ref links — ensure normal font size */
+/* Wiki / block ref links — ensure normal font size and baseline */
 .protyle-wysiwyg [data-node-id] span[data-type~="block-ref"],
 .protyle-wysiwyg [data-node-id] span[data-type~="file-annotation-ref"] {
     font-size: var(--b3-font-size) !important;
+    vertical-align: baseline !important;
+    line-height: inherit !important;
 }
 
 
