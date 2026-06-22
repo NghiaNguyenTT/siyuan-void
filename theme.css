@@ -590,6 +590,19 @@ select {
     background-color: var(--b3-theme-surface) !important;
 }
 
+
+/* ================================================================
+   TEXT SELECTION — darker primary for highlighted text
+   ================================================================ */
+::selection {
+    background: hsl(254, 60%, 35%);
+    color: oklch(99.11% 0 0);
+}
+::-moz-selection {
+    background: hsl(254, 60%, 35%);
+    color: oklch(99.11% 0 0);
+}
+
 /* Callout text: boost contrast on dark backgrounds */
 .b3-typography .callout,
 .protyle-wysiwyg .callout {
