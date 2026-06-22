@@ -577,26 +577,12 @@ select {
     color: hsl(254, 75%, 58%);
 }
 
-/* Wiki / block ref links — force baseline at all levels */
-.protyle-wysiwyg [data-node-id] [data-type~="block-ref"],
-.protyle-wysiwyg [data-node-id] [data-type~="file-annotation-ref"],
-.protyle-wysiwyg [data-node-id] span[data-type~="block-ref"],
-.protyle-wysiwyg [data-node-id] span[data-type~="file-annotation-ref"] {
-    all: unset;
-    color: hsl(254, 75%, 58%) !important;
-    font: inherit !important;
-    cursor: pointer;
-    display: inline !important;
-    vertical-align: baseline !important;
-    position: static !important;
-}
-/* Also target any sup wrapper around block refs */
-.protyle-wysiwyg sup [data-type~="block-ref"],
-.protyle-wysiwyg sup [data-type~="file-annotation-ref"] {
-    font-size: inherit !important;
-    vertical-align: baseline !important;
-    position: static !important;
-    top: auto !important;
+/* Wiki / block ref links — nudge baseline down (SiYuan quirk) */
+.protyle-wysiwyg span[data-type="block-ref"] {
+    font-size: inherit;
+    vertical-align: baseline;
+    transform: translateY(1.5px);
+    display: inline-block;
 }
 
 
